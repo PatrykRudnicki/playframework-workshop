@@ -8,5 +8,9 @@ GET     /                           controllers.HomeController.index
 
 GET     /practice                   controllers.PracticeController.displayPage()
 
+POST    /practice                   controllers.PracticeController.submitPage()
+
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

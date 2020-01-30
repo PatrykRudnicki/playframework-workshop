@@ -1,5 +1,11 @@
 @this()
 
-@()(implicit request: Request[AnyContent])
+@(form: Form[String])(implicit request: Request[AnyContent], messages: Messages)
 
-Hello
+@helper.form(controllers.routes.PracticeController.submitPage()) {
+
+    @helper.CSRF.formField
+    @helper.inputText(form("value"))
+
+    <button id="submit">Submit</button>
+}
